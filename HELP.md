@@ -1,7 +1,7 @@
 # Read Me First
 The following was discovered as part of building this project:
 
-* The original package name 'space.springbok.springbok-brewery' is invalid and this project uses 'space.springbok.springbokbrewery' instead.
+* The original package name 'space.springbok.springbok-brewery' is invalid and this project uses 'space.springbok.brewery' instead.
 
 # Getting Started
 

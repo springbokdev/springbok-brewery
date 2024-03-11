@@ -1,4 +1,4 @@
-package space.springbok.springbokbrewery.web.model;
+package space.springbok.brewery.web.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -11,9 +11,13 @@ import java.util.UUID;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-public class CustomerDTO {
+public class BeerDTO {
 
     private UUID id;
 
-    private String name;
+    private String beerName;
+
+    private String beerStyle;
+
+    private Long upc;
 }

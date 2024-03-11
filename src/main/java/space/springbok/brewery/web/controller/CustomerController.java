@@ -1,4 +1,4 @@
-package space.springbok.springbokbrewery.web.controller;
+package space.springbok.brewery.web.controller;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
@@ -7,8 +7,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import space.springbok.springbokbrewery.services.CustomerService;
-import space.springbok.springbokbrewery.web.model.CustomerDTO;
+import space.springbok.brewery.services.CustomerService;
+import space.springbok.brewery.web.model.CustomerDTO;
 
 import java.util.UUID;
 

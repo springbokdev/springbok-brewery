@@ -1,8 +1,8 @@
-package space.springbok.springbokbrewery.services.impl;
+package space.springbok.brewery.services.impl;
 
 import org.springframework.stereotype.Service;
-import space.springbok.springbokbrewery.services.BeerService;
-import space.springbok.springbokbrewery.web.model.BeerDTO;
+import space.springbok.brewery.services.BeerService;
+import space.springbok.brewery.web.model.BeerDTO;
 
 import java.util.UUID;
 

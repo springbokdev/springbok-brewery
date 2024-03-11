@@ -1,12 +1,12 @@
-package space.springbok.springbokbrewery.web.controller;
+package space.springbok.brewery.web.controller;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import space.springbok.springbokbrewery.services.BeerService;
-import space.springbok.springbokbrewery.web.model.BeerDTO;
+import space.springbok.brewery.services.BeerService;
+import space.springbok.brewery.web.model.BeerDTO;
 
 import java.util.UUID;
 
