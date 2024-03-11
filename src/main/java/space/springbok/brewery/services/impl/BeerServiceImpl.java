@@ -1,11 +1,13 @@
 package space.springbok.brewery.services.impl;
 
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 import space.springbok.brewery.services.BeerService;
 import space.springbok.brewery.web.model.BeerDTO;
 
 import java.util.UUID;
 
+@Slf4j
 @Service
 public class BeerServiceImpl implements BeerService {
     @Override
@@ -27,5 +29,10 @@ public class BeerServiceImpl implements BeerService {
     @Override
     public void updateBeer(UUID beerId, BeerDTO beerDTO) {
         // TODO implement it
+    }
+
+    @Override
+    public void delete(UUID beerId) {
+
     }
 }
