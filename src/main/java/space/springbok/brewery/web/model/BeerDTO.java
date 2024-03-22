@@ -1,5 +1,9 @@
 package space.springbok.brewery.web.model;
 
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Null;
+import jakarta.validation.constraints.Positive;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -13,11 +17,15 @@ import java.util.UUID;
 @Builder
 public class BeerDTO {
 
+    @Null
     private UUID id;
 
+    @NotBlank
     private String beerName;
 
+    @NotBlank
     private String beerStyle;
 
+    @Positive
     private Long upc;
 }

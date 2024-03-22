@@ -1,5 +1,7 @@
 package space.springbok.brewery.web.model;
 
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.Size;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -15,5 +17,7 @@ public class CustomerDTO {
 
     private UUID id;
 
+    @NotBlank
+    @Size(min = 3, max = 100)
     private String name;
 }

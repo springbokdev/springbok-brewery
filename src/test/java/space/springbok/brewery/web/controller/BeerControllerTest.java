@@ -9,6 +9,8 @@ import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.http.MediaType;
 import org.springframework.test.web.servlet.MockMvc;
 import space.springbok.brewery.services.BeerService;
+import space.springbok.brewery.services.v2.BeerServiceV2;
+import space.springbok.brewery.web.controller.v2.BeerControllerV2;
 import space.springbok.brewery.web.model.BeerDTO;
 
 import java.util.UUID;
@@ -79,10 +81,11 @@ public class BeerControllerTest {
     public void handleUpdate() throws Exception {
         //given
         BeerDTO beerDto = validBeer;
+        beerDto.setId(null);
         String beerDtoJson = objectMapper.writeValueAsString(beerDto);
 
         //when
-        mockMvc.perform(put("/api/v1/beer/" + validBeer.getId())
+        mockMvc.perform(put("/api/v1/beer/" + UUID.randomUUID())
                         .contentType(MediaType.APPLICATION_JSON)
                         .content(beerDtoJson))
                 .andExpect(status().isNoContent());

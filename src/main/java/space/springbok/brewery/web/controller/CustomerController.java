@@ -1,5 +1,7 @@
 package space.springbok.brewery.web.controller;
 
+import jakarta.validation.ConstraintViolationException;
+import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
@@ -8,6 +10,8 @@ import org.springframework.web.bind.annotation.*;
 import space.springbok.brewery.services.CustomerService;
 import space.springbok.brewery.web.model.CustomerDTO;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.UUID;
 
 @RequestMapping("/api/v1/customer")
@@ -23,7 +27,7 @@ public class CustomerController {
     }
 
     @PostMapping
-    public ResponseEntity handlePost(@RequestBody CustomerDTO customerDTO) {
+    public ResponseEntity handlePost(@Valid @RequestBody CustomerDTO customerDTO) {
         CustomerDTO savedDTO = customerService.save(customerDTO);
         HttpHeaders headers = new HttpHeaders();
         headers.add("Location", "/api/v1/customer/" + savedDTO.getId().toString());
@@ -32,7 +36,7 @@ public class CustomerController {
     }
 
     @PutMapping("/{customerId}")
-    public ResponseEntity handleUpdate(@PathVariable("customerId") UUID customerId, @RequestBody CustomerDTO customerDTO) {
+    public ResponseEntity handleUpdate(@PathVariable("customerId") UUID customerId, @Valid @RequestBody CustomerDTO customerDTO) {
         customerService.update(customerId, customerDTO);
         return new ResponseEntity(HttpStatus.NO_CONTENT);
     }
