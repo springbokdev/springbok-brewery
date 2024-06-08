@@ -4,6 +4,9 @@ import jakarta.validation.ConstraintViolationException;
 import jakarta.validation.Valid;
 import jakarta.validation.constraints.NotNull;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
+import lombok.val;
+
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -17,6 +20,7 @@ import java.util.List;
 import java.util.UUID;
 
 @Validated
+@Slf4j
 @RequestMapping("/api/v2/beer")
 @RestController
 @RequiredArgsConstructor
@@ -31,8 +35,9 @@ public class BeerControllerV2 {
 
     @PostMapping
     public ResponseEntity handlePost(@Valid @NotNull @RequestBody BeerDTOV2 beerDTO) {
-        BeerDTOV2 savedDTO = beerServiceV2.save(beerDTO);
-        HttpHeaders headers = new HttpHeaders();
+    	log.debug("in handle post ...");
+        val savedDTO = beerServiceV2.save(beerDTO);
+        val headers = new HttpHeaders();
         headers.add("Location", "/api/v1/beer/" + savedDTO.getId().toString());
 
         return new ResponseEntity(headers, HttpStatus.CREATED);
